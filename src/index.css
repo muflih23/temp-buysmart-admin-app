@@ -1,0 +1,81 @@
+.card-shadow-reg {
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.css-1ab1jlb {
+  width : 100%;
+}
+
+/* text sizes */
+
+.text-size-regular {
+  font-size: 16px;
+}
+
+.text-size-large {
+  font-size: 20px;
+}
+
+.text-size-xl {
+  font-size: 24px;
+}
+
+/* text colors */
+
+.text-color-red {
+  color: #D8302F;
+}
+
+.text-color-grey {
+  color: #6b6b6b;
+}
+
+.input-fill-reg {
+  background-color: #f0f0f0;
+}
+
+.text-color-main {
+  color: #151515;
+}
+
+/* font weights */
+
+.text-bold {
+  font-weight: 700;
+}
+
+.text-semi-bold {
+  font-weight: 600;
+}
+
+.text-medium {
+  font-weight: 500;
+}
+
+.text-regular {
+  font-weight: 400;
+}
+
+/* margins */
+
+.mb-reg {
+  margin-bottom: 16px;
+}
+
+.mb-lg {
+  margin-bottom: 24px;
+}
+
+.mt-reg {
+  margin-top: 16px;
+}
+
+.mt-lg {
+  margin-top: 24px;
+}
+
+/* text aligns */
+
+.text-centered {
+  text-align: center;
+}

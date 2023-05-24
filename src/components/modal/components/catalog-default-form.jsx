@@ -23,7 +23,11 @@ function CatalogDefaultForm({options, sectionItems, sectionIndex, handleAddSecti
           bg={'white'} 
           focusBorderColor='brand.red' 
           defaultValue={'Catalog'}
-          onChange={(e)=> setSelected(e.target.value)}
+          onChange={(e)=> {
+            const newList = [...sectionList]
+            newList[sectionIndex]["type"] = e.target.value;
+            dispatch(setSectionList(newList));
+          }}
           disabled={disabled}
         >
           <option value='Brand'>Brand</option>
@@ -35,7 +39,12 @@ function CatalogDefaultForm({options, sectionItems, sectionIndex, handleAddSecti
           placeholder='Select Brand' 
           bg={'white'} 
           focusBorderColor='brand.red' 
-          onChange={(e)=> setSelected(e.target.value)}
+          defaultValue={sectionList[sectionIndex]["brand"]}
+          onChange={(e)=> {
+            const newList = [...sectionList]
+            newList[sectionIndex]["brand"] = e.target.value;
+            dispatch(setSectionList(newList));
+          }}
           disabled={disabled}
         >
           <option value='Brand A'>Brand</option>

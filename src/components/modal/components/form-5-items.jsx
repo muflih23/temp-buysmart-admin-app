@@ -7,6 +7,7 @@ import { setSectionList } from '../../../stores/data/actions'
 function Form5Limit({options, sectionItems, sectionIndex, handleAddSectionItem, handleRemoveSectionItem, setItemIdx, itemIdx, disabled}) {
 
   const [selected, setSelected] = useState('');
+  const [selectedBrand, setSelectedBrand] = useState(null);
 
   const { sectionList } = useSelector((state) => state.data);
   const dispatch = useDispatch();
@@ -21,8 +22,13 @@ function Form5Limit({options, sectionItems, sectionIndex, handleAddSectionItem, 
           maxW={'50%'}
           placeholder='Select Type' 
           bg={'white'} 
-          focusBorderColor='brand.red' 
-          onChange={(e)=> setSelected(e.target.value)}
+          focusBorderColor='brand.red'
+          defaultValue={sectionList[sectionIndex]["type"]} 
+          onChange={(e)=> {
+            const newList = [...sectionList];
+            newList[sectionIndex]["type"] = e.target.value;
+            dispatch(setSectionList(newList));
+          }}
           disabled={disabled}
         >
           <option value='Brand'>Brand</option>
@@ -34,7 +40,12 @@ function Form5Limit({options, sectionItems, sectionIndex, handleAddSectionItem, 
           placeholder='Select Brand' 
           bg={'white'} 
           focusBorderColor='brand.red' 
-          onChange={(e)=> setSelected(e.target.value)}
+          defaultValue={sectionList[sectionIndex]["brand"]}
+          onChange={(e)=> {
+            const newList = [...sectionList];
+            newList[sectionIndex]["brand"] = e.target.value;
+            dispatch(setSectionList(newList));
+          }}
           disabled={disabled}
         >
           <option value='Brand A'>Brand</option>

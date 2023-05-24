@@ -40,6 +40,7 @@ function ModifyTemplate({ isOpen, onOpen, onClose, type, }) {
         style: "",
         status: "",
         type: "",
+        brand: "",
         items: [
           {
             item: ""
@@ -57,6 +58,7 @@ function ModifyTemplate({ isOpen, onOpen, onClose, type, }) {
       style: "",
       status: "",
       type: "",
+      brand: "",
       items: [
         {
           item: ""

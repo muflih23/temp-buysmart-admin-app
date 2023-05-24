@@ -22,7 +22,11 @@ function CategoryDefaultForm({options, sectionItems, sectionIndex, handleAddSect
           placeholder='Select Type' 
           bg={'white'} 
           focusBorderColor='brand.red' 
-          onChange={(e)=> setSelected(e.target.value)}
+          onChange={(e)=> {
+            const newList = [...sectionList]
+            newList[sectionIndex]["type"] = e.target.value;
+            dispatch(setSectionList(newList));
+          }}
           defaultValue={'Category'}
           disabled={disabled}
         >
@@ -34,8 +38,13 @@ function CategoryDefaultForm({options, sectionItems, sectionIndex, handleAddSect
           display={selected === 'Brand' ? 'flex' : 'none'}
           placeholder='Select Brand' 
           bg={'white'} 
-          focusBorderColor='brand.red' 
-          onChange={(e)=> setSelected(e.target.value)}
+          focusBorderColor='brand.red'
+          defaultValue={sectionList[sectionIndex]["brand"]} 
+          onChange={(e)=> {
+            const newList = [...sectionList];
+            newList[sectionIndex]["brand"] = e.target.value;
+            dispatch(setSectionList(newList));
+          }}
           disabled={disabled}
         >
           <option value='Brand A'>Brand</option>

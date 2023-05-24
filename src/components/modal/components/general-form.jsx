@@ -7,6 +7,7 @@ import { setSectionList } from '../../../stores/data/actions'
 function GeneralStyleForm({options, sectionItems, sectionIndex, handleAddSectionItem, handleRemoveSectionItem, setItemIdx, itemIdx, disabled}) {
 
   const [selected, setSelected] = useState('');
+  const [selectedBrand, setSelectedBrand] = useState(null);
 
   const { sectionList } = useSelector((state) => state.data);
   const dispatch = useDispatch();
@@ -22,7 +23,12 @@ function GeneralStyleForm({options, sectionItems, sectionIndex, handleAddSection
           placeholder='Select Type' 
           bg={'white'} 
           focusBorderColor='brand.red' 
-          onChange={(e)=> setSelected(e.target.value)}
+          defaultValue={sectionList[sectionIndex]["type"]}
+          onChange={(e) => {
+            const newList = [...sectionList]
+            newList[sectionIndex]["type"] = e.target.value;
+            dispatch(setSectionList(newList));
+          }}
           disabled={disabled}
         >
           <option value='Brand'>Brand</option>
@@ -35,7 +41,12 @@ function GeneralStyleForm({options, sectionItems, sectionIndex, handleAddSection
           placeholder='Select Brand' 
           bg={'white'} 
           focusBorderColor='brand.red' 
-          onChange={(e)=> setSelected(e.target.value)}
+          defaultValue={sectionList[sectionIndex]["brand"]}
+          onChange={(e)=> {
+            const newList = [...sectionList]
+            newList[sectionIndex]["brand"] = e.target.value;
+            dispatch(setSectionList(newList));
+          }}
           disabled={disabled}
         >
           <option value='Brand A'>Brand A</option>

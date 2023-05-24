@@ -106,7 +106,7 @@ function ModifyTemplate({ isOpen, onOpen, onClose, type, }) {
     
     //console.log(itemIdx);
     //console.log(sectionIndex);
-  }
+  };
 
   const option = [
     {

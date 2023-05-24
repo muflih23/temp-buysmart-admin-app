@@ -8,6 +8,9 @@ function CategoryDefaultForm({options, sectionItems, sectionIndex, handleAddSect
 
   const [selected, setSelected] = useState('');
 
+  const { sectionList } = useSelector((state) => state.data);
+  const dispatch = useDispatch();
+
   return (
     <>
       <Text fontWeight={'semibold'}>Type</Text>
@@ -55,7 +58,19 @@ function CategoryDefaultForm({options, sectionItems, sectionIndex, handleAddSect
                 w={'100%'}
                 spacing={2}
               >
-                <Select placeholder='Select Item' bg={'white'} focusBorderColor='red' disabled={disabled}>
+                <Select 
+                  placeholder='Select Item' 
+                  bg={'white'} 
+                  focusBorderColor='red' 
+                  defaultValue={sectionList[sectionIndex]["items"][idx]}
+                  disabled={disabled}
+                  onChange={(e) => {
+                    const newList = [...sectionList];
+                    newList[sectionIndex]["items"][idx] = e.target.value;
+                    dispatch(setSectionList(newList));
+                    console.log(sectionList);
+                  }}
+                >
                   {options.map((opt, idx) => (
                     <option value={opt.value}>{opt.value}</option>
                   ))}

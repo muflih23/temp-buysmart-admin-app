@@ -45,13 +45,18 @@ function HomePage(props) {
     },
     {
       title: 'Action',
+      align: 'end',
       dataIndex: 'id',
       render: (id, record) => (
         <Flex
-          justifyContent={'flex-start'}
+          justifyContent={'flex-end'}
           alignItems={'center'}
           columnGap={'1rem'}
         >
+          <ActionButton 
+            color={'teal'}
+            text={'Preview Template'}
+          />
           <ActionButton 
             action={
               () => {

@@ -68,7 +68,7 @@ function GeneralStyleForm({options, sectionItems, sectionIndex, handleAddSection
                     const newList = [...sectionList];
                     newList[sectionIndex]["items"][idx] = e.target.value;
                     dispatch(setSectionList(newList));
-                    console.log(sectionList);
+                    //console.log(sectionList);
                   }}
                 >
                   {options.map((opt, idx) => (

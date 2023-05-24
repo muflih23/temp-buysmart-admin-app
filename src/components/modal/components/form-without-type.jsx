@@ -49,7 +49,7 @@ function FormWithoutType({
                       const newList = [...sectionList];
                       newList[sectionIndex]["items"][idx] = e.target.value;
                       dispatch(setSectionList(newList));
-                      console.log(newList);
+                      //console.log(newList);
                       //console.log(sectionList[sectionIndex]["items"][idx]);
                     }
                   }

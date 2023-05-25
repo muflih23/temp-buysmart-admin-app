@@ -98,7 +98,9 @@ function FormWithoutType({
       <ModalPreview 
         onClose={onPreviewClose}
         isOpen={isPreviewOpen}
-      />
+        style={sectionList[sectionIndex]["style"]}
+        items={sectionList[sectionIndex]["items"]}
+      /> 
     </>
   )
 }

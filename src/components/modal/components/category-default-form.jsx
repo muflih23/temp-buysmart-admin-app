@@ -33,6 +33,7 @@ function CategoryDefaultForm({options, sectionItems, sectionIndex, handleAddSect
           <option value='Brand'>Brand</option>
           <option value='Category'>Category</option>
           <option value='Catalog'>Catalog</option>
+          <option value='Product'>Product</option>
         </Select>
         <Select 
           display={sectionList[sectionIndex]["type"] === 'Brand' ? 'flex' : 'none'}
@@ -47,9 +48,9 @@ function CategoryDefaultForm({options, sectionItems, sectionIndex, handleAddSect
           }}
           disabled={disabled}
         >
-          <option value='Brand A'>Brand</option>
-          <option value='Brand B'>Category</option>
-          <option value='Brand C'>Catalog</option>
+          <option value='Brand A'>Brand A</option>
+          <option value='Brand B'>Brand B</option>
+          <option value='Brand C'>Brand C</option>
         </Select>
       </HStack>
       <Flex

@@ -35,7 +35,7 @@ function CategoryDefaultForm({options, sectionItems, sectionIndex, handleAddSect
           <option value='Catalog'>Catalog</option>
         </Select>
         <Select 
-          display={selected === 'Brand' ? 'flex' : 'none'}
+          display={sectionList[sectionIndex]["type"] === 'Brand' ? 'flex' : 'none'}
           placeholder='Select Brand' 
           bg={'white'} 
           focusBorderColor='brand.red'

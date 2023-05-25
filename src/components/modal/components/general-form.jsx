@@ -37,7 +37,7 @@ function GeneralStyleForm({options, sectionItems, sectionIndex, handleAddSection
           <option value='Product'>Product</option>
         </Select>
         <Select 
-          display={selected === 'Brand' ? 'flex' : 'none'}
+          display={sectionList[sectionIndex]["type"] === 'Brand' ? 'flex' : 'none'}
           placeholder='Select Brand' 
           bg={'white'} 
           focusBorderColor='brand.red' 

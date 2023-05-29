@@ -18,6 +18,8 @@ import FlashStylePreview from './preview-modals/flash-style-preview'
 import NewStylePreview from './preview-modals/new-item-style-preview'
 import RectangleVer1Preview from './preview-modals/rectangle-ver1-preview'
 import RectangleVer2Preview from './preview-modals/rectangle-ver2-preview'
+import RectangleVer3Preview from './preview-modals/rectangle-ver3-preview'
+import RectangleVer4Preview from './preview-modals/rectangle-ver4-preview'
 
 function ModalPreview({ isOpen, onClose, style, items }) {
 
@@ -49,6 +51,10 @@ function ModalPreview({ isOpen, onClose, style, items }) {
             ? (<RectangleVer1Preview items={items}/>)
             : style === '1'
             ? (<RectangleVer2Preview items={items}/>)
+            : style === '6'
+            ? (<RectangleVer3Preview items={items}/>)
+            : style === '7'
+            ? (<RectangleVer4Preview items={items}/>)
             : <NoStyleComponent />
           }
         </ModalBody>

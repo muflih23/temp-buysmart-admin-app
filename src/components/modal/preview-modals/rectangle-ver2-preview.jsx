@@ -34,11 +34,17 @@ function RectangleVer2Preview({ items }) {
       >
         <VStack
           w={'300px'}
+          borderWidth={'1px'}
+          borderColor={'brand.lightGrey'}
+          borderRadius={'5px'}
+          bg={'white'}
         >
-          <Image preview={false} width={'100%'} src={`${src}?furniture`} alt='sofa'/>
+          <Image style={{ borderRadius: "5px 5px 0 0" }} preview={false} width={'100%'} src={`${src}?furniture`} alt='sofa'/>
           <VStack
             w={'100%'}
             alignItems={'flex-start'}
+            px={4}
+            pb={4}
           >
             <Text fontWeight={'semibold'}>Perlengkapan Furnitur</Text>
             <Text fontSize={'14px'}>Furnitur minimalis modern untuk rumah, kantor, dll</Text>
@@ -47,11 +53,17 @@ function RectangleVer2Preview({ items }) {
         </VStack>
         <VStack
           w={'300px'}
+          borderWidth={'1px'}
+          borderColor={'brand.lightGrey'}
+          borderRadius={'5px'}
+          bg={'white'}
         >
-          <Image preview={false} width={'100%'} src={`${src}?sofa`} alt='bed'/>
+          <Image style={{ borderRadius: "5px 5px 0 0" }} preview={false} width={'100%'} src={`${src}?sofa`} alt='bed'/>
           <VStack
             w={'100%'}
             alignItems={'flex-start'}
+            px={4}
+            pb={4}
           >
             <Text fontWeight={'semibold'}>Perlengkapan Furnitur</Text>
             <Text fontSize={'14px'}>Furnitur minimalis modern untuk rumah, kantor, dll</Text>

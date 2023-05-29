@@ -10,6 +10,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
 import { HelmetProvider } from 'react-helmet-async';
 import { persistor, store } from './stores/store';
+import "./index.css";
 
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);

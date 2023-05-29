@@ -17,6 +17,7 @@ import { BsStarFill } from 'react-icons/bs'
 import FlashStylePreview from './preview-modals/flash-style-preview'
 import NewStylePreview from './preview-modals/new-item-style-preview'
 import RectangleVer1Preview from './preview-modals/rectangle-ver1-preview'
+import RectangleVer2Preview from './preview-modals/rectangle-ver2-preview'
 
 function ModalPreview({ isOpen, onClose, style, items }) {
 
@@ -39,14 +40,17 @@ function ModalPreview({ isOpen, onClose, style, items }) {
           justifyContent={'center'}
           alignItems={'center'}
         >
-          {/*
+          {
             style === '0' 
             ? (<FlashStylePreview items={items}/>)
             : style === '82' 
             ? (<NewStylePreview items={items}/>)
-            : <NoStyleComponent />*/
+            : style === '50'
+            ? (<RectangleVer1Preview items={items}/>)
+            : style === '1'
+            ? (<RectangleVer2Preview items={items}/>)
+            : <NoStyleComponent />
           }
-          <RectangleVer1Preview />
         </ModalBody>
       </ModalContent>
     </Modal>

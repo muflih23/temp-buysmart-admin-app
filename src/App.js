@@ -11,7 +11,13 @@ import OrganismLayout from './components/layout/organism-layout';
 import { cardTheme } from './components/themes/card';
 import { useDispatch, useSelector } from 'react-redux';
 import { MultiSelectTheme } from 'chakra-multiselect';
+import createCache from '@emotion/cache';
+import { CacheProvider } from '@emotion/react';
 
+const emotionCache = createCache({
+  key: 'emotion-css-cache',
+  prepend: true,
+});
 
 const colors = {
   brand: {
@@ -95,40 +101,42 @@ function App() {
 
 
   return (
-    <ChakraProvider theme={customTheme} resetCSS>
-      <Suspense 
-        fallback={
-          <Flex
-            w={'100vw'}
-            minH={'100vh'}
-            justifyContent={'center'}
-            alignItems={'center'}
-          >
-            <span>...Loading</span>
-          </Flex>}
-      >
-        <Routes>
-          {routes?.map((el,idx) => (
-            <Route
-              key={idx}
-              path={el.path}
-              element={el.isAuthorized === true 
-              ? (
-                <OrganismLayout>
-                  <el.element
-                    dispatch={dispatch}
-                    useState={useState}
-                    useEffect={useEffect}
-                  />
-                </OrganismLayout>
-              ) : (
-                <el.element />
-              )}
-            />
-          ))}
-        </Routes>
-      </Suspense>
-    </ChakraProvider>
+    <CacheProvider value={emotionCache}>
+      <ChakraProvider theme={customTheme} resetCSS>
+        <Suspense 
+          fallback={
+            <Flex
+              w={'100vw'}
+              minH={'100vh'}
+              justifyContent={'center'}
+              alignItems={'center'}
+            >
+              <span>...Loading</span>
+            </Flex>}
+        >
+          <Routes>
+            {routes?.map((el,idx) => (
+              <Route
+                key={idx}
+                path={el.path}
+                element={el.isAuthorized === true 
+                ? (
+                  <OrganismLayout>
+                    <el.element
+                      dispatch={dispatch}
+                      useState={useState}
+                      useEffect={useEffect}
+                    />
+                  </OrganismLayout>
+                ) : (
+                  <el.element />
+                )}
+              />
+            ))}
+          </Routes>
+        </Suspense>
+      </ChakraProvider>
+    </CacheProvider>
   );
 }
 

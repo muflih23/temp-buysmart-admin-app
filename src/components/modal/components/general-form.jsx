@@ -1,10 +1,22 @@
-import { Button, Flex, HStack, IconButton, Select, Text, VStack } from '@chakra-ui/react'
+import { Button, Flex, HStack, IconButton, Select, Text, VStack, useDisclosure } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import {IoIosClose, IoIosAdd} from 'react-icons/io'
 import { useSelector, useDispatch } from 'react-redux'
 import { setSectionList } from '../../../stores/data/actions'
+import ModalPreview from '../modal-preview'
 
-function GeneralStyleForm({options, sectionItems, sectionIndex, handleAddSectionItem, handleRemoveSectionItem, setItemIdx, itemIdx, disabled}) {
+function GeneralStyleForm({
+  options, 
+  sectionItems, 
+  sectionIndex, 
+  handleAddSectionItem, 
+  handleRemoveSectionItem, 
+  setItemIdx, 
+  itemIdx, 
+  disabled
+}) {
+
+  const { isOpen: isPreviewOpen, onOpen: onPreviewOpen, onClose: onPreviewClose } = useDisclosure();
 
   const [selected, setSelected] = useState('');
   const [selectedBrand, setSelectedBrand] = useState(null);
@@ -101,7 +113,17 @@ function GeneralStyleForm({options, sectionItems, sectionIndex, handleAddSection
           <Flex
             w={'100%'}
             justifyContent={'flex-end'}
+            columnGap={4}
           >
+            <Button
+              variant={'solid'}
+              color={'teal'}
+              bg={'white'}
+              onClick={onPreviewOpen}
+              isDisabled={disabled}
+            >
+              Preview Section
+            </Button>
             <Button 
               variant={'solid'} 
               colorScheme='teal' 
@@ -113,6 +135,12 @@ function GeneralStyleForm({options, sectionItems, sectionIndex, handleAddSection
           </Flex>
         </VStack>
       </Flex>
+      <ModalPreview 
+        onClose={onPreviewClose}
+        isOpen={isPreviewOpen}
+        style={sectionList[sectionIndex]["style"]}
+        items={sectionList[sectionIndex]["items"]}
+      />
     </>
   )
 }

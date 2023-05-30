@@ -5,7 +5,7 @@ import "antd/lib/carousel/style/index.js";
 import { CarouselProvider, Slide, Slider } from 'pure-react-carousel';
 import "pure-react-carousel/dist/react-carousel.es.css";
 import { Carousel, LeftButton, Provider, RightButton } from 'chakra-ui-carousel';
-import NukaCarousel from "nuka-carousel";
+import NukaCarousel, { PagingDots } from "nuka-carousel";
 
 function RectangleVer2Preview({ items }) {
 
@@ -31,6 +31,7 @@ function RectangleVer2Preview({ items }) {
         pauseOnHover
         cellSpacing={16}
         dragging={true}
+        renderBottomCenterControls={false}
       >
         <VStack
           w={'300px'}

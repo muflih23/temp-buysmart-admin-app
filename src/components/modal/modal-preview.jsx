@@ -26,6 +26,7 @@ import HorizontalLeftPreview from './preview-modals/horizontal-left-style-previe
 import Vertical1Preview from './preview-modals/vertical-ver-1-style-preview'
 import Vertical2Preview from './preview-modals/vertical-ver-2-style-preview'
 import Vertical3Preview from './preview-modals/vertical-ver-3-style-preview'
+import HorizontalVer4Preview from './preview-modals/vertical-ver-4-style-preview'
 
 function ModalPreview({ isOpen, onClose, style, items }) {
 
@@ -67,10 +68,14 @@ function ModalPreview({ isOpen, onClose, style, items }) {
             ? (<HorizontalRightPreview items={items}/>)
             : style === '4'
             ? (<HorizontalLeftPreview items={items}/>)
+            : style === '51'
+            ? (<HorizontalVer4Preview items={items}/>)
             : style === '13'
             ? (<Vertical1Preview items={items}/>)
             : style === '15'
             ? (<Vertical2Preview items={items}/>)
+            : style === '12'
+            ? (<Vertical3Preview items={items}/>)
             : style === '12'
             ? (<Vertical3Preview items={items}/>)
             : <NoStyleComponent />

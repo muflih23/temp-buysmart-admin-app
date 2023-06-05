@@ -1,13 +1,16 @@
-import { Button, Flex, HStack, IconButton, Select, VStack, Text } from '@chakra-ui/react'
+import { Button, Flex, HStack, IconButton, Select, VStack, Text, useDisclosure } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import {IoIosClose, IoIosAdd} from 'react-icons/io'
 import { useSelector, useDispatch } from 'react-redux'
 import { setSectionList } from '../../../stores/data/actions'
+import ModalPreview from '../modal-preview'
 
 function Form5Limit({options, sectionItems, sectionIndex, handleAddSectionItem, handleRemoveSectionItem, setItemIdx, itemIdx, disabled}) {
 
   const [selected, setSelected] = useState('');
   const [selectedBrand, setSelectedBrand] = useState(null);
+
+  const { isOpen: isPreviewOpen, onOpen: onPreviewOpen, onClose: onPreviewClose } = useDisclosure();
 
   const { sectionList } = useSelector((state) => state.data);
   const dispatch = useDispatch();
@@ -101,7 +104,17 @@ function Form5Limit({options, sectionItems, sectionIndex, handleAddSectionItem, 
           <Flex
             w={'100%'}
             justifyContent={'flex-end'}
+            columnGap={4}
           >
+            <Button
+              variant={'solid'}
+              color={'teal'}
+              bg={'white'}
+              onClick={onPreviewOpen}
+              isDisabled={disabled}
+            >
+              Preview Section
+            </Button>
             <Button 
               display={sectionItems.length === 5 ? 'none' : 'flex'}
               variant={'solid'} 
@@ -114,6 +127,12 @@ function Form5Limit({options, sectionItems, sectionIndex, handleAddSectionItem, 
           </Flex>
         </VStack>
       </Flex>
+      <ModalPreview 
+        onClose={onPreviewClose}
+        isOpen={isPreviewOpen}
+        style={sectionList[sectionIndex]["style"]}
+        items={sectionList[sectionIndex]["items"]}
+      />
     </>
   )
 }

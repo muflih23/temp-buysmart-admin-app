@@ -25,7 +25,6 @@ const colors = {
     darkRed: "#420000",
     redOrange: "#FF5349",
     grey: "#8C8984",
-    lightGrey: "#f2f2f2",
     lightGrey: "#f3f2f2",
     inputFill: "#f0f0f0",
     background: "#fdf6f6",

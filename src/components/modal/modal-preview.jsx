@@ -28,6 +28,8 @@ import Vertical2Preview from './preview-modals/vertical-ver-2-style-preview'
 import Vertical3Preview from './preview-modals/vertical-ver-3-style-preview'
 import HorizontalVer4Preview from './preview-modals/vertical-ver-4-style-preview'
 import Square1Preview from './preview-modals/square-ver-1-style-preview'
+import Circle1Preview from './preview-modals/circle-ver-1-style-preview'
+import Circle2Preview from './preview-modals/circle-ver-2-style-preview'
 
 function ModalPreview({ isOpen, onClose, style, items }) {
 
@@ -79,6 +81,10 @@ function ModalPreview({ isOpen, onClose, style, items }) {
             ? (<Vertical3Preview items={items}/>)
             : style === '14'
             ? (<Square1Preview items={items}/>)
+            : style === '21'
+            ? (<Circle1Preview items={items}/>)
+            : style === '20'
+            ? (<Circle2Preview items={items}/>)
             : <NoStyleComponent />
           }
         </ModalBody>

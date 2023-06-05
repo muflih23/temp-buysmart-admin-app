@@ -2,7 +2,7 @@ import { Flex, HStack, Text, VStack } from '@chakra-ui/react'
 import { Image } from 'antd'
 import React from 'react'
 
-function Vertical1Preview({ items }) {
+function Vertical3Preview({ items }) {
   return (
     <Flex
       w={'100%'}
@@ -41,16 +41,16 @@ function Vertical1Preview({ items }) {
             <Text
               textAlign={'center'}
               fontWeight={'semibold'}
-              fontSize={'28px'}
+              fontSize={'20px'}
             >
-              20% Off
+              EarthTags
             </Text>
             <Text
-              textAlign={'left'}
-              fontWeight={'semibold'}
+              textAlign={'center'}
+              fontWeight={'normal'}
               fontSize={'16px'}
             >
-              Perlengkapan agar rumah mu lebih canggih
+              Cari barang lebih lorem ipsum dolor sit amet lorem ipsum
             </Text>
           </VStack>
         </VStack>
@@ -80,16 +80,16 @@ function Vertical1Preview({ items }) {
             <Text
               textAlign={'center'}
               fontWeight={'semibold'}
-              fontSize={'28px'}
+              fontSize={'20px'}
             >
-              20% Off
+              HomePods
             </Text>
             <Text
-              textAlign={'left'}
-              fontWeight={'semibold'}
+              textAlign={'center'}
+              fontWeight={'normal'}
               fontSize={'16px'}
             >
-              Perlengkapan agar rumah mu lebih canggih
+              Untuk mengisi lorem ipsum dolor sit amet lorem 
             </Text>
           </VStack>
         </VStack>
@@ -98,4 +98,4 @@ function Vertical1Preview({ items }) {
   )
 }
 
-export default Vertical1Preview
+export default Vertical3Preview

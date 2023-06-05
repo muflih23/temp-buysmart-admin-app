@@ -16,82 +16,88 @@ function Vertical2Preview({ items }) {
         pb={4}
       >
         <VStack
-          w={'200px'}
+          w={'286px'}
           justifyContent={'center'}
           alignItems={'center'}
           flexShrink={"0"}
           borderRadius={'5px'}
           position={'relative'}
-          boxShadow={'md'}
+          boxShadow={'sm'}
         >
           <Image 
-            width={'200px'}
-            src={'/vertical_product_example_v2_1_1.png'}
+            width={'100%'}
+            src={'/vertical_product_example.png'}
             preview={false}
             style={{
               borderRadius: '5px'
             }}
           />
-          <VStack
+          <Text
             position={'absolute'}
             bottom={0}
+            fontWeight={'semibold'}
+            fontSize={'20px'}
             pb={4}
             px={4}
           >
-            <Text
-              textAlign={'center'}
-              fontWeight={'semibold'}
-              fontSize={'20px'}
-            >
-              EarthTags
-            </Text>
-            <Text
-              textAlign={'center'}
-              fontWeight={'normal'}
-              fontSize={'16px'}
-            >
-              Cari barang lebih lorem ipsum dolor sit amet lorem ipsum
-            </Text>
-          </VStack>
+            Dekorasi Rumah Bernuansa Modern
+          </Text>
         </VStack>
         <VStack
-          w={'200px'}
+          w={'286px'}
           justifyContent={'center'}
           alignItems={'center'}
           flexShrink={"0"}
           borderRadius={'5px'}
           position={'relative'}
-          boxShadow={'md'}
+          boxShadow={'sm'}
         >
           <Image 
-            width={'200px'}
-            src={'/vertical_product_example_v2_1_2.png'}
+            width={'100%'}
+            src={'/vertical_product_example.png'}
             preview={false}
             style={{
               borderRadius: '5px'
             }}
           />
-          <VStack
+          <Text
             position={'absolute'}
             bottom={0}
+            fontWeight={'semibold'}
+            fontSize={'20px'}
             pb={4}
             px={4}
           >
-            <Text
-              textAlign={'center'}
-              fontWeight={'semibold'}
-              fontSize={'20px'}
-            >
-              HomePods
-            </Text>
-            <Text
-              textAlign={'center'}
-              fontWeight={'normal'}
-              fontSize={'16px'}
-            >
-              Untuk mengisi lorem ipsum dolor sit amet lorem 
-            </Text>
-          </VStack>
+            Lorem ipsum dolor sit amet
+          </Text>
+        </VStack>
+        <VStack
+          w={'286px'}
+          justifyContent={'center'}
+          alignItems={'center'}
+          flexShrink={"0"}
+          borderRadius={'5px'}
+          position={'relative'}
+          boxShadow={'sm'}
+        >
+          <Image 
+            width={'100%'}
+            src={'/vertical_product_example.png'}
+            preview={false}
+            style={{
+              borderRadius: '5px'
+            }}
+          />
+          <Text
+            position={'absolute'}
+            bottom={0}
+            fontWeight={'semibold'}
+            fontSize={'20px'}
+            pb={4}
+            px={4}
+          >
+            Waw mantap scroll sampe ujung
+          </Text>
         </VStack>
       </HStack>
     </Flex>
